@@ -5,3 +5,10 @@
 header, nav{
     z-index: 1001  !important;
 }
+.cut_text{
+    white-space: nowrap;
+    width: 200px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

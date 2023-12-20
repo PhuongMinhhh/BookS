@@ -7,6 +7,7 @@ export default function SingleBook(){
     <div className='mt-28 px-4 lg:px-24'>
       <img className='h-96' src={imageUrl}/>
       <h2>{bookTitle}</h2>
+
     </div>
   )
 

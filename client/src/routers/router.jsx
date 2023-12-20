@@ -11,7 +11,7 @@ import SingleBook  from "../shop/SingleBook"
 import DashBoardLayout from "../dashboard/DashBoardLayout"
 import Dashboard from "../dashboard/Dashboard"
 import UploadBook from "../dashboard/UploadBook"
-import ManagerBook from "../dashboard/ManagerBook"
+import ManageBook from "../dashboard/ManageBook.jsx"
 import EditBook from "../dashboard/EditBook"
 const router = createBrowserRouter([
     {
@@ -53,17 +53,18 @@ const router = createBrowserRouter([
                 element: <Dashboard/>,
             },
             {
-                path: "/admin/dashboard/manager",
-                element: <ManagerBook/>,
+                path: "/admin/dashboard/manage",
+                element: <ManageBook/>,
             },
             {
                 path: "/admin/dashboard/edit-book/:id",
                 element: <EditBook/>,
+                loader: ({params}) => fetch(`http://localhost:3000/book/${params.id}`)  ,
             },
             {
                 path: "/admin/dashboard/Upload",
                 element: <UploadBook/>,
-                loader: ({params}) => fetch(`http://localhost:3000/book/${params.id}`)
+                // loader: ({params}) => fetch(`http://localhost:3000/book/${params.id}`)
             }
         ],
     }

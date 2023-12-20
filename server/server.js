@@ -5,7 +5,8 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.json());
 app.get('/', (req, res) => {
-    res.send('server running');
+    res.send('server running a');
+
 });
 
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
@@ -40,7 +41,7 @@ async function run() {
     //   res.send(allBooks);
     // });
     // Update book collection
-    app.patch("/update-book/:id", async (req, res) => {
+    app.patch("/edit-book/:id", async (req, res) => {
       const id = req.params.id;
       const updateBook = req.body;
       const filter = { _id: new ObjectId(id)};
